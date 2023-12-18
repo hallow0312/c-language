@@ -4,219 +4,86 @@
 void main()
 {
 
-#pragma region 주소 연산자
-	// 변수의 주소 값을 반환하는 연산자.
-
-	// int data = 10;
-
-	// %p 메모리의 주솟값을 나타내는 연산자.
-	// printf(" data 변수의 주솟값: %p", &data);	    //&data : data의 '시작' 주솟값을 표현 
-
-	// 데이터의 주소 값은 해당 데이터가 저장된 메모리 
-	// 의 시작 주소를 의미하며, 메모리의 공간은 1byte
-	// 의 크기로 나누어 표현.
-
-	// 변수의 메모리 공간은 프로그램이 실행될 때 마다 
-	// 바뀌며, 여러 개의 변수가 있을 때 서로 고유의 
-	// 메모리 공간을 가지고 있음 .
-
-#pragma endregion
-
-#pragma region scanf_s()함수
-	// 표준 입력 함수로 , 여러 종류의 데이터를 다양한
-	// 서식에 맞추어 입력해주는 함수 .
-
-	//int count = 0;
+#pragma region 포인터
+	
+	// 메모리의 주소 값을 저장할 수 있는 변수.
 
 
-	//scanf_s("%d", &count); 
+	// 32bit (4byte) 64bit (8byte)
 
-	// 표준 입력 함수로 데이터를 입력하게 되면 버퍼에 
-	// 데이터를 보관하였다가 입력하는 순간 의 
-	// 내용을 프로그램에 전송
-
-	//printf("count  변수의 값은 : %d\n", count); 
-
-	// 표준 입력 함수는 입력을 수행할 때 까지 다음
-	// 작업으로 넘어갈 수 없습니다 .
-
-
-
-#pragma endregion
-
-#pragma region star_tower
-
-	// 입력 --> 3
-	// *
-	// **
-	// ***
-
-
-	//int star = 0;
-	//scanf_s("%d", &star);				  //star = 입력하는 변수 
-	//
-	//for (int a = 1 ; a<=star; a++)		  
-	//{
-	//	
-	//	for (int b = 1; b <= a; b++)		// a가 1일때  b<=1 이니 '*' 1번 출력   --> *
-	//	{									// a 가 2일때 b<=2 이니 '*' 2번 출력   --> **
-	//		printf("*");					// 				.
-	//	}									//				.
-	//	printf("\n");						// 이후 a 가 star일때 까지 '*'출력						 
-	//}
-
-#pragma endregion
-
-#pragma region 복습
-
-#pragma region startower 연습
-
+	// 0~9 <- 10진수
+	// 0~F <- 16진수	 A: 10 B: 11 C:12 D:13 E:14 F:15
+	
 	/*
-	int star = 0;
-	scanf_s("%d", &star);
-														*
-	for (int a = 1; a <= star; a++)						**
-	{													***
-														****
-														*****
-		for (int b = 1; b <= a; b++)
-		{
-			printf("*");
-		}
-		printf("\n");
-	}
-	*/
+	int data = 10;
+	float pi = 3.14f;
 
-	/*
-	*****
-	****    만들기
-	***
-	**
-	*
+	// 8byte 
+	// [NULL]
+	int * ptr= NULL;		//<- ptr : 포인터 변수의 이름 *ptr 의 메모리 크기 : 8byte	  *: 애스터리스크 연산자 
+						    // [NULL] : 아무 것도 저장 안되어있다는 뜻 
 
-	*/
+	// 포인터 변수도 자신의 메모리 공간을 가지고 있으며,
+	// 포인터 변수에 변수의 주소를 저장하게 되면 해당 변수의
+	// 시작 주소를 가리키게 됨.
 
+	//		ptr	 변수
+	// [data 의 시작주소]	<---data의 시작주소 
 
+	ptr = &data;
+	
+	// 변수의 주소는 프로그램이 실행될 때마다 변경되며,
+	// 포인터가 가리키는 메모리 공간의 자료형은 알 수 없으므로 
+	// 포인터가 가리키는 메모리의 자료형으로 선언해주어야 함 .
 
+													 
+	printf("data 변수의 메모리 주소 : %p\n", &data); 
+	printf("ptr변수의 값: %p\n", ptr);									   
+	printf("ptr변수의 메모리 주소: %p\n", &ptr);		 // %p 포인트의 주소 출력 
 
-	/*
-	int star = 0;
-	scanf_s("%d", &star);
+	printf("data변수의 값 : %d\n", data);
+	printf("ptr 변수가 가리키는 값 %d\n", *ptr);
 
-	for (int x=0; star > x; star--)
-	{
-		for (int y = 1; star >= y; y++)
-		{
-			printf("*");
-		}
-		printf("\n");
-	}
-	*/
+	// 포인터 변수를 저장하기 위해 주소 값을 저장할 변수의 자료형과
+	// 포인터 변수의 자료형이 일치해야 함.
 
-	/*
-	int line = 0;
-	 scanf_s("%d", &line);
+	ptr = &pi;
+										   
+	printf("pi 변수의 값 : %f \n", pi);
+	printf("ptr 변수가 가리키는 값  : %f\n", *ptr);	 
 
-	for (int x = 0; x < line; x++)
-	{
-		for (int z = line-1; z > x ; z-- )									*
-		{																   **
-			printf(" ");												  ***
-																		 ****
-		}																*****
-		for (int y=0 ; y< x+1; y++)
-		{
-			printf("*");
-		}
+	// 포인터 변수의 크기는 중앙 처리 장치가 한 번에 
+	// 처리할 수 있는 크기로 정해지며, 한 번에 처리할 
+	// 수 있는 크기는 운영체제에 따라 크기가 결정됨.
 
-		printf("\n");
-
-	}
-	*/
-
-	// 피라미드 모양
-
-//int line = 0;
-//scanf_s("%d", &line);
-//
-//for ( int x = 0; x < line; x++)
-//{
-//	for (int z = line - 1; z > x; z--)
-//	{
-//		printf(" ");
-//
-//	}
-//	for (int y = 0;  y < 2*x+1 ; y++)   
-//	{
-//		printf("*");
-//	}
-//
-//	printf("\n");
-// }
-
-//뒤집힌 피라미드 모양
-
-	//  int line = 0;
-	//scanf_s("%d", &line);
-
-	//for (int x = 0; x < line; x++)
-	//{
-	//	for (int z = 0 ; z < x; z++)
-	//	{
-	//		printf(" ");
-
-	//	}
-	//	for (int y = 2*line-2*x-1 ; y > 0;  y--)
-	//	{
-	//		printf("*");
-	//	}
-
-	//	printf("\n");
-	//}
+	 */
+	
+	
 	
 
-	// 다이아몬드 
-
-//int line = 0;
-//scanf_s("%d", &line);
-//
-//for (int x = 0; x < line; x++)
-//{
-//	for (int z = line - 1; z > x; z--)
-//	{
-//		printf(" ");
-//
-//	}
-//	for (int y = 0; y < 2 * x + 1; y++)
-//	{
-//		printf("*");
-//	}
-//
-//	printf("\n");
-//}
-//for (int x = 0; x < line; x++) 
-//{
-//	for (int z = 0; z < x; z++) 
-//	{
-//		printf(" "); 
-//
-//	}
-//	for (int y = 2 * line - 2 * x - 1; y > 0; y--)
-//	{ 
-//		printf("*");
-//	}
-//
-//	printf("\n");
-//}
 
 #pragma endregion
 
+#pragma region sizeof 연산자
+	// 피연산자의 크기를 바이트 단위로 반환하는 연산자.
 
+	/*
+	int* pointer = NULL;
+
+	printf("char 자료형의 크기 : %d \n", sizeof(char));
+	printf("short 자료형의 크기 : % d \n", sizeof(short));
+	printf("int 자료형의 크기 : %d \n", sizeof(int));
+	printf("long 자료형의 크기 : %d \n", sizeof(long));
+	printf("float 자료형의 크기 : %d \n", sizeof(float));
+	printf("double 자료형의 크기 : %d \n", sizeof(double));
+	printf("pointer 자료형의 크기 : %d \n", sizeof(pointer)); */
 
 
 
 
 #pragma endregion
+
+
 
 
 

@@ -1,2 +1,16 @@
 ﻿  solution.c
-  Program1.vcxproj -> C:\Users\user\Desktop\c-language\Program1\x64\Debug\Program1.exe
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(72,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(72,9): message : consider using '%zd' in the format string
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(73,9): warning C4477: 'printf' : format string '% d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(73,9): message : consider using '%zd' in the format string
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(74,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(74,9): message : consider using '%zd' in the format string
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(75,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(75,9): message : consider using '%zd' in the format string
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(76,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(76,9): message : consider using '%zd' in the format string
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(77,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(77,9): message : consider using '%zd' in the format string
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(78,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\Administrator\Desktop\c-language\Program1\solution.c(78,9): message : consider using '%zd' in the format string
+  Program1.vcxproj -> C:\Users\Administrator\Desktop\c-language\Program1\x64\Debug\Program1.exe
