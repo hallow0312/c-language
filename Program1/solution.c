@@ -2,88 +2,40 @@
 
 
 void main()
-{
-
-#pragma region 포인터
-	
-	// 메모리의 주소 값을 저장할 수 있는 변수.
-
-
-	// 32bit (4byte) 64bit (8byte)
-
-	// 0~9 <- 10진수
-	// 0~F <- 16진수	 A: 10 B: 11 C:12 D:13 E:14 F:15
-	
+{ 
+#pragma region 배열
+	// 같은 자료형의 변수들로 이루어진 유한 집합.
 	/*
-	int data = 10;
-	float pi = 3.14f;
+	int array[5];
 
-	// 8byte 
-	// [NULL]
-	int * ptr= NULL;		//<- ptr : 포인터 변수의 이름 *ptr 의 메모리 크기 : 8byte	  *: 애스터리스크 연산자 
-						    // [NULL] : 아무 것도 저장 안되어있다는 뜻 
+	// *** 배열의 경우 첫 번째 원소는 0부터 시작  array[5] = [0][1][2][3][4] 의 배열 생성 
+	// [5]배열에 값을 넣으면 에러가 뜸
 
-	// 포인터 변수도 자신의 메모리 공간을 가지고 있으며,
-	// 포인터 변수에 변수의 주소를 저장하게 되면 해당 변수의
-	// 시작 주소를 가리키게 됨.
+	// 배열은 원하는 원소에 원하는 값을 저장할 수 있으며
+	// 배열의 크기는 컴파일이 되는 시점부터 고정된 메모리
+	// 공간을 가지게 됨 .
 
-	//		ptr	 변수
-	// [data 의 시작주소]	<---data의 시작주소 
+	for (int i = 0;  i < 5;  i++)
+	{
+		array[i] = (i+1)*100;
 
-	ptr = &data;
+		printf("array[%d]:%d\n", i, array[i]);
+	}
+	*/
+	int list[] = { 10,20,30,40 }; // 16 byte / 4 
 	
-	// 변수의 주소는 프로그램이 실행될 때마다 변경되며,
-	// 포인터가 가리키는 메모리 공간의 자료형은 알 수 없으므로 
-	// 포인터가 가리키는 메모리의 자료형으로 선언해주어야 함 .
+	int size = sizeof(list) / sizeof(int);
 
-													 
-	printf("data 변수의 메모리 주소 : %p\n", &data); 
-	printf("ptr변수의 값: %p\n", ptr);									   
-	printf("ptr변수의 메모리 주소: %p\n", &ptr);		 // %p 포인트의 주소 출력 
+	printf("list 배열의 사이즈 :%d \n", size);
 
-	printf("data변수의 값 : %d\n", data);
-	printf("ptr 변수가 가리키는 값 %d\n", *ptr);
 
-	// 포인터 변수를 저장하기 위해 주소 값을 저장할 변수의 자료형과
-	// 포인터 변수의 자료형이 일치해야 함.
-
-	ptr = &pi;
-										   
-	printf("pi 변수의 값 : %f \n", pi);
-	printf("ptr 변수가 가리키는 값  : %f\n", *ptr);	 
-
-	// 포인터 변수의 크기는 중앙 처리 장치가 한 번에 
-	// 처리할 수 있는 크기로 정해지며, 한 번에 처리할 
-	// 수 있는 크기는 운영체제에 따라 크기가 결정됨.
-
-	 */
-	
-	
 	
 
+
+	// 배열의 크기는 생략할 수 있으며 , 초기화 목록에서 
+	// 설정한 요소에 따라 배열의 크기가 결정됨 .
 
 #pragma endregion
-
-#pragma region sizeof 연산자
-	// 피연산자의 크기를 바이트 단위로 반환하는 연산자.
-
-	/*
-	int* pointer = NULL;
-
-	printf("char 자료형의 크기 : %d \n", sizeof(char));
-	printf("short 자료형의 크기 : % d \n", sizeof(short));
-	printf("int 자료형의 크기 : %d \n", sizeof(int));
-	printf("long 자료형의 크기 : %d \n", sizeof(long));
-	printf("float 자료형의 크기 : %d \n", sizeof(float));
-	printf("double 자료형의 크기 : %d \n", sizeof(double));
-	printf("pointer 자료형의 크기 : %d \n", sizeof(pointer)); */
-
-
-
-
-#pragma endregion
-
-
 
 
 
