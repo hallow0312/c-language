@@ -162,6 +162,80 @@ for (int x = 1; x <= num; x++)
 }
 
 */
+#pragma region 복습
+//int num = 0;
+//printf("수를 입력하시오 : ");
+//scanf_s("%d", &num);
+//
+//printf("입력한 수의 약수는 : ");
+//
+//for (int a = 1; a <= num; a++)
+//{
+//	if (num % a == 0)
+//	{
+//		printf(" %d ", a);
+//	}
+//}
+
+//int a = 0;
+//int b = 0;
+//int g = 0; 
+//printf("두정수를 입력하시오 : ");
+//
+//scanf_s("%d%d", &a,&b); 
+//  
+//
+//for (int i = 1; i <= a && i <= b; i++)
+//{
+//	if (a % i == 0 && b % i == 0)
+//	{
+//		 g = i; 
+//	}
+//	
+//}
+//printf(" 두 수의 최대공약수 : %d", g);   
+
+
+//소인수 분해
+int a, c; 
+
+printf("정수를 입력하시오 : ");
+
+scanf_s("%d", &a); 
+
+for (c = 2; c <= a; c++)
+{
+	if (a % c == 0)
+	{
+		printf("%d", c);
+		a = a / c;
+		if (a % c == 0)
+		{
+			printf(" * ");
+		}
+		else if (a % c != 0)
+		{
+			if (a > c)
+				printf(" * ");
+
+		}
+		
+
+		c = 1;
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+#pragma endregion
+
 
 
 #pragma endregion
@@ -175,7 +249,6 @@ for (int x = 1; x <= num; x++)
 
 
 }
-
 
 
 

@@ -22,11 +22,11 @@ void main()
 		printf("array[%d]:%d\n", i, array[i]);
 	}
 	*/
-	int list[] = { 10,20,30,40 }; // 16 byte / 4 
-	
-	int size = sizeof(list) / sizeof(int);
+	//int list[] = { 10,20,30,40 }; // 16 byte / 4 
+	//
+	//int size = sizeof(list) / sizeof(int);
 
-	printf("list 배열의 사이즈 :%d \n", size);
+	//printf("list 배열의 사이즈 :%d \n", size);
 
 
 	
