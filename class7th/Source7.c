@@ -197,13 +197,15 @@ for (int x = 1; x <= num; x++)
 
 
 //소인수 분해
-int a, c; 
+
+/*
+int a = 0; 
 
 printf("정수를 입력하시오 : ");
 
 scanf_s("%d", &a); 
 
-for (c = 2; c <= a; c++)
+for (int c = 2; c <= a; c++)
 {
 	if (a % c == 0)
 	{
@@ -219,18 +221,19 @@ for (c = 2; c <= a; c++)
 				printf(" * ");
 
 		}
-		
-
 		c = 1;
+
 	}
 	
 
 }
 
+*/
 
 
 
 
+		
 
 
 
