@@ -1,98 +1,118 @@
 #include <stdio.h>
- 
-void Instantiate()
-{
-	printf("Instantiate\n");
-  }
+#include <stdlib.h>
 
-int Factorial(int x)  
+enum Unit
 {
-	
-	
-	if (x == 1)
+	//열거형은 값을 따로 지정하지 않으며 가장 위에 있는 값은 
+	// 0이라는 값으로 설정이 된다.
+	SKELETON,
+	SLIME = 15,
+	GOBLIN
+
+	// 열거형에서 중간에 있는 값을 변경하게 되면 그다음에 있는 
+	// 이전에 있는 값에서 +1이 됩니다.
+};
+
+void CreateUnit(enum Unit unit)		 
+{
+
+	switch (unit)
 	{
-		return 1;
-		
+	case SKELETON: printf("Create Skeleton\n");
+		break;
+	case SLIME: printf("Create Slime\n");
+		break;
+	case GOBLIN: printf("Create Goblin\n");
+		break;
+	default:
+		break;
 	}
-	else 
-	{
-		return x * Factorial(x - 1);  
-	}
-	
-		  
+
 }
-							   
 
-
+	
 int main()		 
 {
-	
-#pragma region 함수포인터
+#pragma region 포인터_배열
 
-	// 함수의 주소값을 저장하고 가리킬 수있는 포인터 변수 
+	//const char* string[3];
+	////  8byte  8byte   8byte
+	////  [   ]  [   ]   [   ]
+	////
+	//// "Blue"  "Black" "Green"
 
-	// 반환값과 매개 변수가 없는 함수 포인터를 선언함.
-	/*
-	void (*ptr) ();
-	*/
-	/*
-	int (*iptr)(int);
-	*/
-	//ptr 변수에 Instantiate 함수의 주소를 저장
-	//ptr = Instantiate;
+	//string[0] = "Blue";
+	//string[1] = "Black";
+	//string[2] = "Green";
 
-
-	//함수포인터 호출.
-	//ptr();
-
-	//printf("Instantiate 함수 주소: %p\n", &Instantiate);
-	//printf("ptr의 값 :%p\n", ptr);
-
-	
-	//iptr = Factorial;
-	//int num = 0;
-	//scanf_s("%d", &num);
-	//
-	//printf("%d의 Factorial의 값: %d\n", num, iptr(num)); 
-	//
-	////for 문으로 만들었을때의 factorial 값
-	//int count=1;
-	//for (int i = 1; i <= num; i++)
+	//for (int i = 0; i < 3; i++)
 	//{
-	//	count = count * i;
+	//	//printf("string[%d] : %p\n", i, string[i]);	
+	//	printf("string[%d] : %s\n", i, string[i]);	 
+
+
+
 	//}
-	//printf("%d\n", count);
+		  												 
 
-	
-	// 함수 포인터는 함수의 반환형과 매개 변수의 타입이 일치해야 하며,
-	// 함수 포인터를 사용하여 동적으로 메모리를 할당할 수 없음.
-
+		
 
 
 	
+
 #pragma endregion
 
-#pragma region 이중_포인터
+#pragma region 열거형
+
 	/*
-	int data = 100;
-
-	int * sptr = &data;
-
-	int ** dptr = &sptr;
-
-	printf("*sptr의 값 : %d\n", *sptr);
-	printf("*sptr의 주소값 : %p\n", sptr);
-	printf("**dptr의 값 : %p\n", *dptr);
-
-	**dptr = 999;
-	printf("data의 값 : %d\n", data);
+	CreateUnit(SKELETON);   
+	CreateUnit(SLIME);		  
+	CreateUnit(GOBLIN);
 	*/
 
+
+
+
+
+
+#pragma endregion
+
+#pragma region 허상_포인터
+	//이미 해제된 메모리 영역을 가리키는 포인터.
+
+	/*
+	int *ptr= malloc(sizeof(4));
 	
+	*ptr = 999;		    
+	printf("*ptr의 값: %d\n", *ptr);
+
+	free(ptr);
+
+	ptr = NULL; 
+
+	if (ptr == NULL)
+	{
+		*ptr = malloc(sizeof(4));    
+	}
+	
+	*ptr = 235;	
+
+	printf("*ptr의 값: %d\n", *ptr);
+
+	frre(ptr);
+	*/
+
+
+	
+
+
+
 #pragma endregion
 
 
-	return 0;
+
+
+	return 0;   
 }
 
 
