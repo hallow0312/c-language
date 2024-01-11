@@ -1,116 +1,119 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <time.h>
 
-enum Unit
-{
-	//열거형은 값을 따로 지정하지 않으며 가장 위에 있는 값은 
-	// 0이라는 값으로 설정이 된다.
-	SKELETON,
-	SLIME = 15,
-	GOBLIN
-
-	// 열거형에서 중간에 있는 값을 변경하게 되면 그다음에 있는 
-	// 이전에 있는 값에서 +1이 됩니다.
-};
-
-void CreateUnit(enum Unit unit)		 
-{
-
-	switch (unit)
-	{
-	case SKELETON: printf("Create Skeleton\n");
-		break;
-	case SLIME: printf("Create Slime\n");
-		break;
-	case GOBLIN: printf("Create Goblin\n");
-		break;
-	default:
-		break;
-	}
-
-}
 
 	
 int main()		 
 {
-#pragma region 포인터_배열
+#pragma region rand()함수
 
-	//const char* string[3];
-	////  8byte  8byte   8byte
-	////  [   ]  [   ]   [   ]
-	////
-	//// "Blue"  "Black" "Green"
+	// 0~ 32767 사이의 난수 값을 생성하고 반환하는 함수 
 
-	//string[0] = "Blue";
-	//string[1] = "Black";
-	//string[2] = "Green";
+	// seed 값으로 현재 시간을 넣으면 초당 seed 값이 
+	// 계속해서 변환되기 때문에 실행할 떄마다 랜덤한
+	// 난수의 값을 얻을 수 있음.
 
-	//for (int i = 0; i < 3; i++)
-	//{
-	//	//printf("string[%d] : %p\n", i, string[i]);	
-	//	printf("string[%d] : %s\n", i, string[i]);	 
+	/*
+	srand(time(NULL));
+	int seed = rand();
+	
+	
+	for (int i = 0; i < 5; i++)
+	{
+		 seed = rand()%10+1;
+		 
+		printf("seed값 : %d\n", seed);
+	}
+	*/
+	
 
 
+#pragma endregion
+#pragma region UpDown게임
+	/*
+	int Player = 0;
+	srand(time(NULL));
+	int seed = rand() % 100 + 1;
+	printf("1~100까지의 수에서 하나를 골라 작성하시오 : ");
+	*/
 
-	//}
-		  												 
+	/*
+	for (int i = 0; i < 5; i++)
+	{
+		scanf_s("%d", &Player);
+		if (Player > seed)
+		{
+			printf("Down\n");
+		}
+		else if (Player < seed)
+		{
+			printf("Up\n");
+		}
+		else if (Player == seed)
+		{
+			printf("정답\n");
+			i = i + 5;
+		}
+		if (i == 4 && Player != seed)
+		{
+			printf("실패");
+		}
+	}
+	*/
+	int life = 5;
+	
+	//컴퓨터가 가지고 있는 값을 맞추기위한 변수 선언
+	int Player = 0;
+
+	
+	srand(time(NULL));
+	//컴퓨터 변수에 1~20까지의 난수 값을 넣어줌
+	int Computer = rand() % 21;
+	
+	
+	printf("Up Down Game");
+	
+	while (1)
+	{
+		printf("\n");
+		for (int i = 0; i < life; i++)
+		{
+			printf("♥");
+				
+		}
+		printf("\n"); // 입력을 받을수 있는 텍스트를 출력
+		
+		scanf_s("%d", &Player);
+		
+		system("cls");
+		if (Player > Computer)
+		{
+			printf("Down");
+			life--;
+		}
+		else if (Player < Computer)
+		{
+			printf("Up");
+			life--;
+		}
+		else if (Player == Computer)
+		{
+			printf("\n*********정답*********\n");
+			break;
+		}
+		if (life <= 0)
+		{
+			printf("\n실패\n");
+			break;
+		}
 
 		
 
 
-	
-
-#pragma endregion
-
-#pragma region 열거형
-
-	/*
-	CreateUnit(SKELETON);   
-	CreateUnit(SLIME);		  
-	CreateUnit(GOBLIN);
-	*/
-
-
-
-
-
-
-#pragma endregion
-
-#pragma region 허상_포인터
-	//이미 해제된 메모리 영역을 가리키는 포인터.
-
-	/*
-	int *ptr= malloc(sizeof(4));
-	
-	*ptr = 999;		    
-	printf("*ptr의 값: %d\n", *ptr);
-
-	free(ptr);
-
-	ptr = NULL; 
-
-	if (ptr == NULL)
-	{
-		*ptr = malloc(sizeof(4));    
+		
+		
 	}
 	
-	*ptr = 235;	
-
-	printf("*ptr의 값: %d\n", *ptr);
-
-	frre(ptr);
-	*/
-
-
-	
-
-
-
-#pragma endregion
-
-
-
 
 	return 0;   
 }
