@@ -1,5 +1,2 @@
 ﻿  solution.c
-C:\Users\Administrator\Desktop\c-language\Program1\solution.c(69,7): warning C4013: 'srand' undefined; assuming extern returning int
-C:\Users\Administrator\Desktop\c-language\Program1\solution.c(71,21): warning C4013: 'rand' undefined; assuming extern returning int
-C:\Users\Administrator\Desktop\c-language\Program1\solution.c(88,9): warning C4013: 'system' undefined; assuming extern returning int
   Program1.vcxproj -> C:\Users\Administrator\Desktop\c-language\Program1\x64\Debug\Program1.exe
