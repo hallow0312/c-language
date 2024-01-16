@@ -1,110 +1,72 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <conio.h> // KEY
-#include <windows.h> // Coordinate 
+#include <string.h>
 
-#define UP 72
-#define LEFT 75
-#define RIGHT 77
-#define DOWN 80	  
+#define WIDTH 11
+#define HEIGHT 11
 
-void GotoXY(int x, int y)
+typedef struct Student
 {
-	// x , y 좌표 설정
-	COORD position = { x,y };
+	char name[10];
+}Student;
 
-	// 커서 이동 함수 
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
+char maze[WIDTH][HEIGHT];
 
-}
+void CreateMaze()
+{
+	//0: 빈공간 (" ")
+	//1: 벽(□)
+	//2: 탈출구(◎)
 	
+	strcpy(maze[0],  "1111111111");
+	strcpy(maze[1],  "1001110011");
+	strcpy(maze[2],  "1101111011");
+	strcpy(maze[3],  "1101111011");
+	strcpy(maze[4],  "1100000011");
+	strcpy(maze[5],  "1111110111");
+	strcpy(maze[6],  "1100000001");
+	strcpy(maze[7],  "1100111101");
+	strcpy(maze[8],  "1110111101");
+	strcpy(maze[9],  "1110002111");
+	strcpy(maze[10], "1111111111");
+}
+
+void Render()
+{
+	for (int i = 0; i < 11; i++)
+	{
+		for (int j = 0; j < 11; j++)
+		{
+			printf("%c", maze[i][j]); 
+		}
+		printf("\n");
+	}
+}
+
+
+
+
 int main()		 
 {
-	char key = 0;
-	int x, y;
-	x = 5; 
-	y= 5;
+	Student student;
+
+	// 첫 번째 매개변수
+	// 복사받을 문자 배열을 넣어줌
+
+	// 두 번째 매개변수
+	// 복사시킬 문자열을 줌.
+	/*
+	strcpy(student.name, "LEE"); 
+
+	printf("student.name의 값 : %s\n", student.name);
+
+	strcpy(student.name, "G");
+
+	printf("student.name의 값 : %s\n", student.name);
+	*/
 	
-	
-	
-
-	while (1)
-	{
-		GotoXY(x, y);
-		printf("☆");
-		
-		if (_kbhit)	  
-		{
-			key = _getch();
-			system("cls");
-			if (key == -32)
-			{
-				
-				key = _getch();
-			}
-			switch (key)
-			{
-			case UP: if (y > 0)
-			{
-				y--;
-			}
-				break;
-			case LEFT:
-				if (x > 0)
-				{
-					x -= 1;
-				}
-				break;
-			case RIGHT:	x += 2;	   
-
-				break;
-			case DOWN: y++;
-				break;
-
-			}
-			
-		}
-		
-		
-		
-		
-	}
-
-
-			
-
-
-
-		 
-
-	//while (1)
-	//{
-	//	if (_kbhit)	  //키보드 입력확인 (true/false)
-	//	{
-	//		key = _getch(); // key 입력을 받아주는 함수
-	//	   
-	//		//printf("입력값 : %c\n", key); // Up :72 Left :75 Right 77 Down 80
-	//		if (key == -32)
-	//		{
-	//			key = _getch();
-	//		}
-	//		
-
-	//		switch (key)
-	//		{
-	//		case UP:  printf("UP\n");
-	//			break;
-	//		case LEFT:	printf("LEFT\n");
-	//			break;
-	//		case RIGHT:	printf("RIGHT\n");
-	//			break;
-	//		case DOWN:	printf("DOWN\n");
-	//			break;
-	//		
-	//		}
-	//	}
-	//}
-
+	CreateMaze();
+    Render();
 
 	return 0;   
 }
