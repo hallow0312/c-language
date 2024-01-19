@@ -1,4 +1,11 @@
 ﻿  solution.cpp
-C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(26,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(26,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(29,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(29,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(43,17): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(43,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(46,29): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(46,40): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(124,28): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(124,30): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\c-language\Program1\solution.cpp(134,10): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
   Program1.vcxproj -> C:\Users\Administrator\Desktop\c-language\Program1\x64\Debug\Program1.exe
